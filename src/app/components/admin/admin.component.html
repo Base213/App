@@ -1,0 +1,18 @@
+<ion-content class="ion-text-center bg-image">
+
+  <ion-card-title class="ion-text-center">
+    <h1>Administrar Usuarios</h1> 
+  </ion-card-title>
+  <ion-card *ngFor="let user of bd.listaUsuarios | async" class="ion-text-start">
+    <ion-card-content *ngIf="user.correo !== ''">
+      <h3>{{ user.nombre }} {{ user.apellido }}</h3>
+      <p>Correo: {{ user.correo }}</p>
+      <div *ngIf="user.correo !== 'admin@duocuc.cl'">
+        <ion-button color="primary" fill="solid" (click)="eliminarUsuario(user)">Eliminar</ion-button>
+      </div>
+      <div *ngIf="user.correo == 'admin@duocuc.cl'">
+        <ion-button color="primary" fill="solid" [disabled]="true" (click)="eliminarUsuario(user)">Eliminar</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

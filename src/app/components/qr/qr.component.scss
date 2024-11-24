@@ -1,0 +1,35 @@
+ion-header {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    --padding-end: 20px;
+    --padding-start: 20px;
+  }
+  
+  h4, p, h5 {
+    font-family: 'Merriweather Light' !important;
+    color: white;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Merriweather Bold' !important;
+    color: white;
+  }
+  
+  .qr {
+    filter: blur(4px);
+  }
+  
+  ion-button {
+    --background: #FFB800;
+    font-family: 'Lato Regular' !important;
+  }
+  
+  a {
+    font-family: 'Lato BoldItalic' !important;
+    color: white;
+  }
+
+  ion-content {
+    text-align: center;
+    --background: #121212;
+  }

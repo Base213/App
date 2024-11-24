@@ -1,0 +1,48 @@
+<ion-content no-scroll class="bg-image">
+
+  <ion-title class="ion-padding-top ion-text-center">
+    <img src="assets/img/logo_duoc.png" style="height: 80px;">
+    <h1>Sistema de Asistencia <br> DuocUC</h1>
+  </ion-title>
+  
+  <div class="ion-padding-vertical" style="padding-top: 17%; padding-left: 10%; padding-right: 10%;">
+    
+    <ion-card class="ion-text-center ion-padding-vertical login" >
+
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Iniciar Sesión</h2>
+        </ion-label>
+      </ion-card-title>
+
+      <form >
+        <ion-card-content>
+          
+          <ion-item style="--background: transparent;" >
+            <ion-input name="correo" id="correoLogin"label="Ingrese Correo" labelPlacement="floating" type="text" [(ngModel)]="correoEscrito"></ion-input>
+          </ion-item>
+          
+          <ion-item style="--background: transparent;">
+            <ion-input name="password" id="passLogin" label="Ingrese Contraseña" labelPlacement="floating" type="password" [(ngModel)]="passwordEscrita"></ion-input>
+          </ion-item>
+        
+          <br>
+          <ion-button (click)="ingresar()" shape="round" id="ingresar">
+            Ingresar
+            <ion-icon  name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+
+        </ion-card-content>
+      </form>
+      
+      <ion-label>
+        <a (click)="correo()">Recuperar contraseña</a>
+      </ion-label> <br><br>
+      <ion-label>
+        <a (click)="registro()">¿No tienes cuenta? Regístrate aquí</a>
+      </ion-label>
+    </ion-card> 
+
+  </div>
+  
+</ion-content>

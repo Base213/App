@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title >
+      
+        <img src="assets/img/logo_duoc.png" style="height: 80px;" class="ion-text-center">
+    
+        <h1 #titulo>Sistema de Asistencia DuocUC</h1>
+
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="componenteActual" value="qr" (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button *ngIf="usuario && usuario.correo != 'admin@duocuc.cl' " value="qr" id="qr">
+        <ion-label>QR</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button *ngIf="usuario && usuario.correo != 'admin@duocuc.cl' " value="misclases">
+        <ion-label>Asistencia</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="foro" id="foro">
+        <ion-label>Foro</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="misdatos" id="misdatos">
+        <ion-label>Perfil</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button 
+      *ngIf="usuario && usuario.correo === 'admin@duocuc.cl' " 
+      value="admin" id="admin">
+        <ion-label>Admin</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar style="text-align: center;">
+    <ion-button (click)="cerrarSesion()" color="white" shape="round" id="cerrarSesion">
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      Cerrar sesión
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<!-- *ngIf="usuario && usuario.correo === 'admin@duocuc.cl' "  -->
